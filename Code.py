@@ -37,3 +37,4 @@ for i in range(3):
         if x[i][j].value() > 0:
             print(f"P{i+1} -> G{j+1} : {x[i][j].value()} unit")
 print("Total biaya minimum (ribu Rp):", lp.value(model.objective))
+
