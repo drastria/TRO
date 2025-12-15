@@ -65,3 +65,58 @@ Pastikan sistem Anda sudah terinstall:
 
 ### Setup Python Environment
 
+
+---
+
+## 👥 Tim
+
+**Kelas 05TPLM005 - Teknik Informatika**  
+Universitas Pamulang | 2024/2025
+
+| Nama | NIM |
+|------|-----|
+| Afrian Pamungkas | 231011402924 |
+| Muhammad Haikal Ardhana | 231011402061 |
+| Siti Nur Halimah | 231011402974 |
+
+**Dosen Pengampu:**  
+Agung Perdananto S.Kom., M. Kom.
+
+---
+
+## 📚 Referensi
+
+- Taha, H. A. (2017). *Operations Research: An Introduction* (10th ed.). Pearson Education [web:4][web:7]
+- Mitchell, S., et al. (2011). PuLP: A Linear Programming Toolkit for Python
+- Winston, W. L., & Goldberg, J. B. (2004). *Operations Research: Applications and Algorithms*
+
+---
+
+## 📄 Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE untuk detail.
+
+---
+
+## 🤝 Kontribusi
+
+Kontribusi, issues, dan feature requests sangat diterima!  
+Silakan buka [issues page](https://github.com/username/optimasi-transportasi-sembako/issues) jika Anda menemukan bug atau memiliki saran.
+
+---
+
+## ⭐ Acknowledgments
+
+- Terima kasih kepada Universitas Pamulang atas fasilitas dan bimbingannya
+- PuLP library untuk menyediakan tools Linear Programming yang powerful
+- Komunitas open source yang terus berkontribusi pada pengembangan tools optimasi
+
+---
+
+<div align="center">
+
+**Dibuat dengan ❤️ untuk mata kuliah Teknik Riset Operasional**
+
+[![GitHub](https://img.shields.io/badge/GitHub-View_Repository-181717?style=for-the-badge&logo=github)](https://github.com/username/optimasi-transportasi-sembako)
+
+</div>
