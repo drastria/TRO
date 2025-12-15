@@ -66,7 +66,76 @@ Pastikan sistem Anda sudah terinstall:
 ### Setup Python Environment
 
 
+
+### Aktivasi Excel Solver
+
+1. Buka Microsoft Excel
+2. File → Options → Add-ins
+3. Pilih "Solver Add-in" → Go
+4. Centang "Solver Add-in" → OK
+
 ---
+
+## 💻 Penggunaan
+
+### Menjalankan Optimasi dengan Python
+
+
+### Menggunakan Excel Solver
+
+1. Buka file `excel.xlsx` [file:1]
+2. Klik tab "Data" → "Solver"
+3. Set Objective: Cell total biaya (minimize)
+4. By Changing Variable Cells: Range alokasi distribusi
+5. Subject to Constraints: Kendala pasokan dan permintaan
+6. Solve
+
+---
+
+## 📈 Hasil
+
+### Solusi Optimal
+
+**Total Biaya Minimum:** **Rp 31.600.000,-** [file:2]
+
+### Alokasi Distribusi Optimal
+
+| Rute | Unit | Biaya/Unit | Total Biaya |
+|------|------|------------|-------------|
+| P1 → G3 | 1.200 | Rp 8.000 | Rp 9.600.000 |
+| P2 → G1 | 900 | Rp 9.000 | Rp 8.100.000 |
+| P2 → G4 | 100 | Rp 9.000 | Rp 900.000 |
+| P3 → G2 | 800 | Rp 9.000 | Rp 7.200.000 |
+| P3 → G3 | 100 | Rp 10.000 | Rp 1.000.000 |
+| P3 → G4 | 600 | Rp 8.000 | Rp 4.800.000 |
+
+### Validasi
+
+✅ **Python (PuLP):** Rp 31.600.000,-  
+✅ **Excel Solver:** Rp 31.600.000,-  
+✅ **Hasil Identik:** Kedua metode menghasilkan solusi yang sama [file:2]
+
+---
+
+## 🔬 Metodologi
+
+### Model Matematis
+
+**Fungsi Tujuan:**
+
+Minimize: Z = Σ Σ (biaya_ij × x_ij)
+
+**Kendala:**
+
+1. **Pasokan Pabrik:** Σ x_ij = supply_i untuk setiap pabrik i [file:2]
+2. **Permintaan Gudang:** Σ x_ij = demand_j untuk setiap gudang j [file:2]
+3. **Non-Negatif:** x_ij ≥ 0 untuk semua i, j [file:2]
+
+---
+
+## 📁 Struktur Repository
+
+
 
 ## 👥 Tim
 
