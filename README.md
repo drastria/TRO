@@ -19,18 +19,17 @@
 
 </div>
 
----
 
 ## 📌 Tentang Proyek
 
-Proyek ini merupakan implementasi **Program Linear** untuk menyelesaikan masalah **Transportation Problem** pada PT Sembako Jaya, sebuah perusahaan distributor sembako yang beroperasi dengan 3 pabrik dan 4 gudang regional [file:2].
+Proyek ini merupakan implementasi **Program Linear** untuk menyelesaikan masalah **Transportation Problem** pada PT Sembako Jaya, sebuah perusahaan distributor sembako yang beroperasi dengan 3 pabrik dan 4 gudang regional.
 
 ### 🎯 Tujuan
 
 - Meminimalkan total biaya transportasi distribusi
 - Memenuhi seluruh permintaan gudang regional
 - Memanfaatkan kapasitas pabrik secara optimal
-- Membandingkan solusi dari Python (PuLP) dan Excel Solver
+- Membandingkan solusi dari metode manual, Python (PuLP), dan Excel Solver
 
 ### 📊 Problem Statement
 
@@ -40,18 +39,17 @@ Proyek ini merupakan implementasi **Program Linear** untuk menyelesaikan masalah
 | Gudang Regional | 4 | 3.700 unit total |
 | Rute Distribusi | 12 | Biaya bervariasi (Rp 8.000 - Rp 13.000/unit) |
 
----
 
 ## ✨ Fitur
 
 - ✅ **Model Program Linear** lengkap dengan variabel keputusan dan kendala
-- ✅ **Dual Solver Implementation**: Python (PuLP) dan Excel Solver
-- ✅ **Validasi Hasil** dengan perbandingan kedua metode
+- ✅ **Triple Solver Implementation**: Metode Manual (VAM + MODI), Python (PuLP), dan Excel Solver
+- ✅ **Validasi Hasil** dengan perbandingan ketiga metode
 - ✅ **Dokumentasi Lengkap** dalam format laporan akademik
 - ✅ **Analisis Sensitivitas** dan eksplorasi skenario alternatif
 - ✅ **Open Source** dan mudah direplikasi
 
----
+
 
 ## 🚀 Instalasi
 
@@ -65,6 +63,19 @@ Pastikan sistem Anda sudah terinstall:
 
 ### Setup Python Environment
 
+Clone repository
+git clone https://github.com/username/optimasi-transportasi-sembako.git
+cd optimasi-transportasi-sembako
+
+(Opsional) Buat virtual environment
+python -m venv venv
+source venv/bin/activate # Linux/Mac
+
+atau
+venv\Scripts\activate # Windows
+
+Install dependencies
+pip install pulp
 
 
 ### Aktivasi Excel Solver
@@ -74,29 +85,45 @@ Pastikan sistem Anda sudah terinstall:
 3. Pilih "Solver Add-in" → Go
 4. Centang "Solver Add-in" → OK
 
----
+
 
 ## 💻 Penggunaan
 
 ### Menjalankan Optimasi dengan Python
 
+python Code.py
+
+**Output yang diharapkan:**
+
+Status: Optimal
+
+Alokasi Optimal:
+P1 -> G3 : 1200.0 unit
+P2 -> G1 : 900.0 unit
+P2 -> G4 : 100.0 unit
+P3 -> G2 : 800.0 unit
+P3 -> G3 : 100.0 unit
+P3 -> G4 : 600.0 unit
+
+Total biaya minimum (ribu Rp): 31600.0
+
 
 ### Menggunakan Excel Solver
 
-1. Buka file `excel.xlsx` [file:1]
+1. Buka file `excel.xlsx`
 2. Klik tab "Data" → "Solver"
 3. Set Objective: Cell total biaya (minimize)
 4. By Changing Variable Cells: Range alokasi distribusi
 5. Subject to Constraints: Kendala pasokan dan permintaan
 6. Solve
 
----
+
 
 ## 📈 Hasil
 
 ### Solusi Optimal
 
-**Total Biaya Minimum:** **Rp 31.600.000,-** [file:2]
+**Total Biaya Minimum:** **Rp 31.600.000,-**
 
 ### Alokasi Distribusi Optimal
 
@@ -111,11 +138,12 @@ Pastikan sistem Anda sudah terinstall:
 
 ### Validasi
 
+✅ **Metode Manual (VAM + MODI):** Rp 31.600.000,-  
 ✅ **Python (PuLP):** Rp 31.600.000,-  
 ✅ **Excel Solver:** Rp 31.600.000,-  
-✅ **Hasil Identik:** Kedua metode menghasilkan solusi yang sama [file:2]
+✅ **Hasil Identik:** Ketiga metode menghasilkan solusi yang sama!
 
----
+
 
 ## 🔬 Metodologi
 
@@ -127,13 +155,16 @@ Minimize: Z = Σ Σ (biaya_ij × x_ij)
 
 **Kendala:**
 
-1. **Pasokan Pabrik:** Σ x_ij = supply_i untuk setiap pabrik i [file:2]
-2. **Permintaan Gudang:** Σ x_ij = demand_j untuk setiap gudang j [file:2]
-3. **Non-Negatif:** x_ij ≥ 0 untuk semua i, j [file:2]
+1. **Pasokan Pabrik:** Σ x_ij = supply_i untuk setiap pabrik i
+2. **Permintaan Gudang:** Σ x_ij = demand_j untuk setiap gudang j
+3. **Non-Negatif:** x_ij ≥ 0 untuk semua i, j
 
----
+### Metode Penyelesaian
 
-## 📁 Struktur Repository
+1. **Vogel's Approximation Method (VAM)** - Untuk mendapatkan solusi awal
+2. **MODI (Modified Distribution)** - Untuk verifikasi optimalitas
+3. **PuLP (Python)** - Solver otomatis dengan Simplex
+4. **Excel Solver** - Validasi dengan GUI-based solver
 
 
 
@@ -151,28 +182,28 @@ Universitas Pamulang | 2024/2025
 **Dosen Pengampu:**  
 Agung Perdananto S.Kom., M. Kom.
 
----
+
 
 ## 📚 Referensi
 
-- Taha, H. A. (2017). *Operations Research: An Introduction* (10th ed.). Pearson Education [web:4][web:7]
+- Taha, H. A. (2017). *Operations Research: An Introduction* (10th ed.). Pearson Education
 - Mitchell, S., et al. (2011). PuLP: A Linear Programming Toolkit for Python
 - Winston, W. L., & Goldberg, J. B. (2004). *Operations Research: Applications and Algorithms*
 
----
+
 
 ## 📄 Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE untuk detail.
 
----
+
 
 ## 🤝 Kontribusi
 
 Kontribusi, issues, dan feature requests sangat diterima!  
 Silakan buka [issues page](https://github.com/drastria/TRO/issues) jika Anda menemukan bug atau memiliki saran.
 
----
+
 
 ## ⭐ Acknowledgments
 
@@ -180,12 +211,11 @@ Silakan buka [issues page](https://github.com/drastria/TRO/issues) jika Anda men
 - PuLP library untuk menyediakan tools Linear Programming yang powerful
 - Komunitas open source yang terus berkontribusi pada pengembangan tools optimasi
 
----
 
 <div align="center">
 
 **Dibuat dengan ❤️ untuk mata kuliah Teknik Riset Operasional**
 
-[![GitHub](https://img.shields.io/badge/GitHub-View_Repository-181717?style=for-the-badge&logo=github)](https://github.com/drastroa/TRO)
+[![GitHub](https://img.shields.io/badge/GitHub-View_Repository-181717?style=for-the-badge&logo=github)](https://github.com/drastria/TRO)
 
 </div>
