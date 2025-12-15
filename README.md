@@ -101,7 +101,7 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE unt
 ## 🤝 Kontribusi
 
 Kontribusi, issues, dan feature requests sangat diterima!  
-Silakan buka [issues page](https://github.com/username/optimasi-transportasi-sembako/issues) jika Anda menemukan bug atau memiliki saran.
+Silakan buka [issues page](https://github.com/drastria/TRO/issues) jika Anda menemukan bug atau memiliki saran.
 
 ---
 
@@ -117,6 +117,6 @@ Silakan buka [issues page](https://github.com/username/optimasi-transportasi-sem
 
 **Dibuat dengan ❤️ untuk mata kuliah Teknik Riset Operasional**
 
-[![GitHub](https://img.shields.io/badge/GitHub-View_Repository-181717?style=for-the-badge&logo=github)](https://github.com/username/optimasi-transportasi-sembako)
+[![GitHub](https://img.shields.io/badge/GitHub-View_Repository-181717?style=for-the-badge&logo=github)](https://github.com/drastroa/TRO)
 
 </div>
